@@ -1,0 +1,37 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <map>
+using namespace std;
+
+int main(){
+    int t;
+    cin>>t;
+    while (t--) {
+    vector<char> c;
+    string s,a;
+    cin>>s;
+    bool flag = false;
+    for(int i=0;i<int(s.length());i++){
+        c.push_back(s[i]);
+    }
+    while(a<s && next_permutation(c.begin(), c.end())){
+        a ="";
+        for(int i=0;i<c.size();i++)
+            a+=c[i];
+        if(a>s)
+            flag = true;
+    }
+    if(flag){
+        for(int i=0;i<c.size();i++)
+            cout<<c[i];
+    }
+    else cout<<"no answer";
+    cout<<endl;
+    
+}
+    return 0;
+    
+}
